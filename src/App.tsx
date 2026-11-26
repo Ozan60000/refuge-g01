@@ -1,6 +1,7 @@
 import {Route, Routes} from "react-router";
 import Layout from "./Layout.tsx";
 import Home from "./pages/Home.tsx";
+import Carte from "./pages/Carte.tsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/refuge.css";
 import "./css/App.css";
@@ -10,6 +11,7 @@ export default function App() {
         <Routes>
             <Route path={"/"} element={<Layout/>}>
                 <Route index element={<Home/>}/>
+                <Route path={"/carte"} element={<Carte/>}/>
             </Route>
         </Routes>
     );
