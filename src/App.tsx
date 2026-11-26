@@ -3,6 +3,7 @@ import Layout from "./Layout.tsx";
 import Home from "./pages/Home.tsx";
 import Carte from "./pages/Carte.tsx";
 import TrouverHebergement from "./pages/TrouverHebergement.tsx";
+import Centre from "./pages/Centre.tsx"
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/refuge.css";
 import "./css/App.css";
@@ -14,6 +15,7 @@ export default function App() {
                 <Route index element={<Home/>}/>
                 <Route path={"/carte"} element={<Carte/>}/>
                 <Route path={"/trouver-centre"} element={<TrouverHebergement/>}/>
+                <Route path={"/centre/:id"} element={<Centre/>}/>
             </Route>
         </Routes>
     );
