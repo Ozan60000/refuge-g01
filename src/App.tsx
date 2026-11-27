@@ -3,6 +3,7 @@ import Layout from "./Layout.tsx";
 import Home from "./pages/Home.tsx";
 import Carte from "./pages/Carte.tsx";
 import TrouverHebergement from "./pages/TrouverHebergement.tsx";
+import Alertes from "./pages/Alertes.tsx";
 import Connexion from "./pages/Connexion.tsx"
 import Centre from "./pages/Centre.tsx"
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -21,6 +22,7 @@ export default function App() {
                     <Route index element={<Home/>}/>
                     <Route path={"/carte"} element={<Carte/>}/>
                     <Route path={"/trouver-centre"} element={<TrouverHebergement/>}/>
+                    <Route path={"/alertes"} element={<Alertes/>}/>
                     <Route path={"/login"} element={<Connexion/>}/>
                     <Route path={"/centre/:id"} element={<Centre/>}/>
                 </Route>
@@ -28,3 +30,5 @@ export default function App() {
         </UserContext>
     );
 }
+
+// TODO : Adapter la prise de données avec la vraie BDD quand disponible
