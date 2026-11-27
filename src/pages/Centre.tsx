@@ -1,17 +1,12 @@
 import {Link, useParams} from "react-router";
 import {mockCentres} from "../JeuEssai.ts";
-import {type Centre} from "../utils.ts";
-import {useEffect, useState} from "react";
 import {Card} from "react-bootstrap";
 import Bouton, {varianteBouton} from "../components/Bouton.tsx";
 
 export default function Centre() {
-    const [centre, setCentre] = useState<Centre | undefined>(undefined);
     const id: number = Number(useParams().id)
-
-    useEffect(() => {
-        setCentre(mockCentres.find(c => c.id === id))
-    })
+    // On cherche directement le centre, pas besoin de useEffect
+    const centre = mockCentres.find(c => c.id === id)
 
     if (!centre) return <p>Erreur : centre pas trouvé ou non-existant</p>
 

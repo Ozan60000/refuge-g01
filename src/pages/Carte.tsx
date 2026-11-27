@@ -32,17 +32,17 @@ export default function Carte() {
                     <div className="d-flex align-items-center flex-column">
                         <div>
                             <input type="checkbox" id="use-location" checked={useLocation}
-                                   onClick={e => setUseLocation(e.currentTarget.checked)}/>
+                                   onChange={e => setUseLocation(e.target.checked)}/>
                             <label htmlFor="use-location">Utiliser la localisation</label>
                         </div>
                         <div>
                             <input type="checkbox" id="show-zones" checked={afficherZones}
-                                   onClick={e => setAfficherZones(e.currentTarget.checked)}/>
+                                   onChange={e => setAfficherZones(e.target.checked)}/>
                             <label htmlFor="show-zones">Afficher zones</label>
                         </div>
                         <div>
                             <input type="checkbox" id="show-centres" checked={afficherCentres}
-                                   onClick={e => setAfficherCentres(e.currentTarget.checked)}/>
+                                   onChange={e => setAfficherCentres(e.target.checked)}/>
                             <label htmlFor="show-centres">Afficher centres</label>
                         </div>
                     </div>
@@ -50,10 +50,10 @@ export default function Carte() {
                 <Col xs={12} xl={10}>
                     <div className="d-flex justify-content-center m-2">
                         <CarteComp height="500px" width="900px" zoom={11}>
-                            {afficherCentres && mockCentres.map(c => <Marker position={c.position}><Popup>{c.nom} <br/>
+                            {afficherCentres && mockCentres.map(c => <Marker key={c.id} position={c.position}><Popup>{c.nom} <br/>
                                 <Link to={"/centre/" + c.id}>Voir le centre</Link> </Popup></Marker>)}
                             {afficherZones && mockZones.map(z =>
-                                <Polygon color="red" positions={z.perimetre}>
+                                <Polygon key={z.id} color="red" positions={z.perimetre}>
                                     <Popup>{z.nom}</Popup>
                                 </Polygon>)}
                             {useLocation && <LocationMarker/>}

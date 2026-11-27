@@ -1,6 +1,7 @@
 import Container from "react-bootstrap/Container";
 import {Navbar, Nav} from "react-bootstrap";
 import {Link} from "react-router";
+import logoBlanc from "../assets/refuge-logo-blanc.svg";
 
 export default function NavBar() {
     return (
@@ -9,7 +10,7 @@ export default function NavBar() {
                 <Navbar.Brand as={Link} to="/">
                     <img
                         alt=""
-                        src="/src/assets/refuge-logo-blanc.svg"
+                        src={logoBlanc}
                         width="32%"
                         height="32%"
                         className="d-inline-block align-top"

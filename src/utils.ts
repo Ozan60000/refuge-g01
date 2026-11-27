@@ -1,17 +1,26 @@
 import type {LatLngExpression} from "leaflet";
 import {createContext} from "react";
+import iconeAlerte from "./assets/icones/alerte.svg";
+import iconeAnimaux from "./assets/icones/animaux.svg";
+import iconeHorloge from "./assets/icones/horloge.svg";
+import iconePlaces from "./assets/icones/places.svg";
+import iconePmr from "./assets/icones/pmr.svg";
+import iconePosition from "./assets/icones/position.svg";
+import iconeRestauration from "./assets/icones/restauration.svg";
+import iconeSanitaires from "./assets/icones/sanitaires.svg";
 
 export type StatutCentre = "Ouvert" | "Fermé" | "Complet"
 
-export enum images {
-    alerte = "/src/assets/icones/alerte.svg",
-    animaux = "/src/assets/icones/animaux.svg",
-    horloge = "src/assets/icones/horloge.svg",
-    places = "src/assets/icones/places.svg",
-    pmr = "src/assets/icones/pmr.svg",
-    position = "src/assets/icones/position.svg",
-    restauration = "src/assets/icones/restauration.svg",
-    sanitaires = "src/assets/icones/sanitaires.svg",
+// Les icônes sont importées pour que Vite les trouve aussi après le build
+export const images = {
+    alerte: iconeAlerte,
+    animaux: iconeAnimaux,
+    horloge: iconeHorloge,
+    places: iconePlaces,
+    pmr: iconePmr,
+    position: iconePosition,
+    restauration: iconeRestauration,
+    sanitaires: iconeSanitaires,
 }
 
 export type Commune = {
