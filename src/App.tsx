@@ -6,6 +6,7 @@ import TrouverHebergement from "./pages/TrouverHebergement.tsx";
 import Alertes from "./pages/Alertes.tsx";
 import Connexion from "./pages/Connexion.tsx"
 import Centre from "./pages/Centre.tsx"
+import Inscription from "./pages/Inscription.tsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/refuge.css";
 import "./css/App.css";
@@ -24,6 +25,7 @@ export default function App() {
                     <Route path={"/trouver-centre"} element={<TrouverHebergement/>}/>
                     <Route path={"/alertes"} element={<Alertes/>}/>
                     <Route path={"/login"} element={<Connexion/>}/>
+                    <Route path={"/inscription"} element={<Inscription/>}/>
                     <Route path={"/centre/:id"} element={<Centre/>}/>
                 </Route>
             </Routes>
